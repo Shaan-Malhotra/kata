@@ -1,6 +1,25 @@
+function isUpperCase(string) {
+    return (string.toUpperCase() === string)
+}
+
 function greet(name) {
     if (Array.isArray(name)) {
-        if (name.length === 2) {
+        if(name.some((name) => isUpperCase(name))) {
+            lowerCaseNames = [];
+            upperCaseNames = [];
+
+            //separate upper and lowercase names
+            name.forEach((name) => {
+                if (isUpperCase(name)) {
+                    upperCaseNames.push(name);
+                } else {
+                    lowerCaseNames.push(name);
+                }
+            })
+            console.log('uppercase ', upperCaseNames, '\n', 'lowercase ', lowerCaseNames)
+            return `Hello, ${lowerCaseNames[0]} and ${lowerCaseNames[1]}. AND HELLO ${upperCaseNames[0]}!`
+
+        } else if (name.length === 2) {
             return `Hello ${name[0]} and ${name[1]}`
         }
         else if (name.length === 3) {

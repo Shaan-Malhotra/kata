@@ -21,5 +21,9 @@ describe('greet', () => {
         it('when passed ["Jill", "Jane", "Jerry"] it should return "Hello Jill, Jane, and Jerry"', () => {
             expect(greet(['Jill', 'Jane', 'Jerry'])).toBe("Hello Jill, Jane, and Jerry");
         });
+
+        it("when passed ['Amy', 'BRIAN', 'Charlotte'] it should return 'Hello, Amy and Charlotte. AND HELLO BRIAN!'", () => {
+            expect(greet(['Amy', 'BRIAN', 'Charlotte'])).toBe('Hello, Amy and Charlotte. AND HELLO BRIAN!');
+        })
     });
 });
