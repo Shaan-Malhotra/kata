@@ -6,8 +6,8 @@ describe('greet', () => {
             expect(greet("Bob")).toBe("Hello Bob");
         });
 
-        it('when passed 2, it should return 2', () => {
-            expect(fizzBuzz(2)).toBe(2);
-        });
+        it('when passed null, it should return "Hello my friend.', () => {
+            expect(greet(null)).toBe("Hello my friend")
+        })
     });
 });
