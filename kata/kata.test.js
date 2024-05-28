@@ -7,7 +7,12 @@ describe('greet', () => {
         });
 
         it('when passed null, it should return "Hello my friend.', () => {
-            expect(greet(null)).toBe("Hello my friend")
-        })
+            expect(greet(null)).toBe("Hello my friend");
+        });
+
+        it('when passed BOB, it should return "HELLO BOB.', () => {
+            expect(greet("BOB")).toBe("HELLO BOB");
+        });
+
     });
 });

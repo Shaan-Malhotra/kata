@@ -1,7 +1,10 @@
 function greet(name) {
     if (!name) {
         return "Hello my friend";
-    } else {
+    } else if (name === name.toUpperCase()) {
+        return "HELLO " + name;
+    }
+    else {
         let message = "Hello " + name;
         return message;
     }
