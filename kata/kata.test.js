@@ -24,6 +24,10 @@ describe('greet', () => {
 
         it("when passed ['Amy', 'BRIAN', 'Charlotte'] it should return 'Hello, Amy and Charlotte. AND HELLO BRIAN!'", () => {
             expect(greet(['Amy', 'BRIAN', 'Charlotte'])).toBe('Hello, Amy and Charlotte. AND HELLO BRIAN!');
-        })
+        });
+
+        it("when passed ['Amy', 'Brian, Charlotte'] it should return 'Hello Amy, Brian and Charlotte'", () => {
+            expect(greet(['Amy', 'Brian, Charlotte'])).toBe('Hello Amy, Brian, and Charlotte');
+        });
     });
 });
