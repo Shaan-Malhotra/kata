@@ -14,10 +14,13 @@ function twoNames(twoNames) {
 function greet(name) {
     if (Array.isArray(name)) {
         if (Array.isArray(twoNames(name[1]))) {
+            if (name.some((currentName) => currentName.includes('"'))) {
+                return `Hello, ${name[0]} and ${name[1].replace(/"/g, '')
+                    }.`
+            }
             name.push(twoNames(name[1])[0]);
             name.push(twoNames(name[1])[1].trim());
             name.splice(1, 1);
-            console.log(name);
         }
         if (name.some((name) => isUpperCase(name))) {
             lowerCaseNames = [];
@@ -31,14 +34,12 @@ function greet(name) {
                     lowerCaseNames.push(name);
                 }
             })
-            console.log('uppercase ', upperCaseNames, '\n', 'lowercase ', lowerCaseNames)
             return `Hello, ${lowerCaseNames[0]} and ${lowerCaseNames[1]}. AND HELLO ${upperCaseNames[0]}!`
 
         } else if (name.length === 2) {
             return `Hello ${name[0]} and ${name[1]}`
         }
         else if (name.length === 3) {
-            console.log("length is 3");
             return `Hello ${name[0]}, ${name[1]}, and ${name[2]}`
         }
     } else {
